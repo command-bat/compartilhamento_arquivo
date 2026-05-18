@@ -3,7 +3,7 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 
-const { nanoid } = require("nanoid");
+const { nanoid } = await import("nanoid");
 
 const bcrypt = require("bcrypt");
 

@@ -1,0 +1,106 @@
+.container {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0f1115;
+
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+
+  background: #1a1d24;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.fileName {
+  color: white;
+
+  font-size: 26px;
+
+  word-break: break-word;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #bfc7d5;
+}
+
+.passwordInput {
+  height: 45px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 10px;
+
+  padding: 0 14px;
+
+  background: #262b35;
+
+  color: white;
+
+  font-size: 15px;
+}
+
+.downloadButton {
+  height: 50px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #5d8cff;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.downloadButton:hover {
+  background: #4b7fff;
+}
+
+.downloadButton:active {
+  transform: scale(0.98);
+}
+
+.loading {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0f1115;
+
+  color: white;
+
+  font-size: 22px;
+}

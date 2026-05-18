@@ -22,7 +22,7 @@ function FilePage() {
       const response = await api.get(`/file/${code}`);
 
       if (response.data.quickDownload) {
-        window.location.href = `http://localhost:3000/download/${code}`;
+        window.location.href = `https://api.commandbat.com.br/download/${code}`;
 
         return;
       }
@@ -34,7 +34,7 @@ function FilePage() {
   }
 
   async function handleDownload() {
-    window.location.href = `http://localhost:3000/download/${code}?password=${password}`;
+    window.location.href = `https://api.commandbat.com.br/download/${code}?password=${password}`;
   }
 
   if (!fileData) {

@@ -1,0 +1,153 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+}
+
+.modal {
+  width: 100%;
+  max-width: 500px;
+
+  background: #1a1d24;
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.modal h2 {
+  color: white;
+}
+
+.modal input {
+  height: 50px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #262b35;
+
+  color: white;
+
+  padding: 0 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.actions button {
+  flex: 1;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #5d8cff;
+
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.qrBox {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 10px;
+}
+
+.qrButton {
+  height: 50px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #5d8cff;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.qrButton:hover,
+.actions button:hover {
+  background: #313744;
+}
+
+.qrButton:active,
+.actions button:active {
+  transform: scale(0.98);
+}
+
+.activeQR {
+  background: #262b35;
+}
+
+.qrWrapper {
+  overflow: hidden;
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.35s ease;
+}
+
+.qrVisible {
+  max-height: 300px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.qrHidden {
+  max-height: 0;
+
+  opacity: 0;
+
+  transform: translateY(-10px);
+
+  pointer-events: none;
+}
+
+.qrBox {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

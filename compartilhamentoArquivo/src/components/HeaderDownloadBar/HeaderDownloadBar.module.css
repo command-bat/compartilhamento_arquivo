@@ -1,0 +1,87 @@
+.bar {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+  max-width: 700px;
+
+  height: 70px;
+
+  background: rgba(26, 29, 36, 0.9);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  z-index: 999;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  overflow: hidden;
+}
+
+.label {
+  color: #7f8794;
+
+  font-size: 12px;
+}
+
+.fileName {
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  max-width: 400px;
+}
+
+.button {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #5d8cff;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #4c7cff;
+}

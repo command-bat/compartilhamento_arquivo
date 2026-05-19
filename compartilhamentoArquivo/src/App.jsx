@@ -1,15 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-
-import Home from "./pages/Home/index";
-import Download from "./pages/Download/index";
+import Home from "./pages/Home";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="*" element={<Home />} />
-      <Route path="/:code" element={<Download />} />
-    </Routes>
-  );
+  return <Home />;
 }
 
 export default App;

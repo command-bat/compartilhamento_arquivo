@@ -25,6 +25,8 @@
   gap: 18px;
 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  overflow: hidden;
 }
 
 .title {
@@ -88,12 +90,8 @@
   color: white;
 
   font-size: 15px;
-}
 
-.field input:disabled {
-  opacity: 0.5;
-
-  cursor: not-allowed;
+  width: 100%;
 }
 
 .checkboxWrapper {
@@ -106,6 +104,7 @@
 
   cursor: pointer;
 
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -197,4 +196,206 @@
   color: #a8b0bf;
 
   font-size: 14px;
+}
+
+.modeSelector {
+  display: flex;
+
+  background: #262b35;
+
+  border-radius: 14px;
+
+  padding: 5px;
+
+  gap: 5px;
+}
+
+.modeSelector button {
+  flex: 1;
+
+  height: 45px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #a8b0bf;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.activeMode {
+  background: #5d8cff !important;
+
+  color: white !important;
+}
+
+.passwordWrapper {
+  overflow: hidden;
+}
+
+.expiryPreview {
+  color: #a8b0bf;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.field input[type="range"] {
+  width: 100%;
+  accent-color: #5d8cff;
+}
+
+.fastDates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* COLUNA ESQUERDA (incrementos) */
+.fastSumtime {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* COLUNA DIREITA (presets) */
+.fastSetDates {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ====== GRUPOS (+ / -) ====== */
+
+.tenMinutes,
+.oneHour,
+.oneDay {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* BOTÕES DO SPLIT */
+.tenMinutes button,
+.oneHour button,
+.oneDay button {
+  flex: 1;
+  height: 40px;
+
+  border: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  color: #cfd6e4;
+  background: #262b35;
+}
+
+/* DIVISÃO VISUAL DO MEIO */
+.tenMinutes button:first-child,
+.oneHour button:first-child,
+.oneDay button:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* + (ação positiva) */
+.tenMinutes button:first-child,
+.oneHour button:first-child,
+.oneDay button:first-child {
+  background: rgba(93, 140, 255, 0.15);
+  color: #7aa2ff;
+}
+
+/* - (ação negativa) */
+.tenMinutes button:last-child,
+.oneHour button:last-child,
+.oneDay button:last-child {
+  background: rgba(255, 90, 90, 0.12);
+  color: #ff7b7b;
+}
+
+/* hover positivo */
+.tenMinutes button:first-child:hover,
+.oneHour button:first-child:hover,
+.oneDay button:first-child:hover {
+  background: rgba(93, 140, 255, 0.25);
+}
+
+/* hover negativo */
+.tenMinutes button:last-child:hover,
+.oneHour button:last-child:hover,
+.oneDay button:last-child:hover {
+  background: rgba(255, 90, 90, 0.2);
+}
+
+/* ====== PRESETS (SETS) ====== */
+
+.fastSetDates button {
+  height: 40px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  background: #262b35;
+  color: #cfd6e4;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.fastSetDates button:hover {
+  background: #313744;
+  border-color: rgba(93, 140, 255, 0.35);
+  transform: translateY(-1px);
+}
+/* efeito geral leve */
+.fastDates button:active {
+  transform: scale(0.97);
+}
+
+.expiryHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.toggleFastBtn {
+  height: 45px;
+  padding: 0 14px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #262b35;
+  color: #cfd6e4;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  width: 100%;
+}
+
+.toggleFastBtn:hover {
+  background: #313744;
+  border-color: rgba(93, 140, 255, 0.35);
+  transform: translateY(-1px);
 }

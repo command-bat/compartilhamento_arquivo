@@ -1,0 +1,447 @@
+.overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 998;
+
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  width: 100%;
+  max-width: 500px;
+
+  background: #1a1d24;
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  animation: modalIn 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.header h2 {
+  color: white;
+
+  font-size: 24px;
+
+  word-break: break-word;
+}
+
+.header span {
+  color: #8b93a3;
+
+  font-size: 14px;
+}
+
+.info {
+  color: #5d8cff;
+
+  font-size: 14px;
+}
+
+.passwordInput {
+  height: 50px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 14px;
+
+  background: #262b35;
+
+  color: white;
+
+  padding: 0 14px;
+
+  font-size: 15px;
+}
+
+.downloadButton {
+  height: 52px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #6b7cff, #4f8cff);
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.downloadButton:hover {
+  background: #4c7cff;
+}
+
+.loading,
+.error,
+.quickText {
+  color: white;
+
+  text-align: center;
+
+  font-size: 15px;
+}
+
+.error {
+  color: #ff7272;
+}
+
+.quickText {
+  color: #8b93a3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+.topBar {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.trashButton,
+.minimizeButton {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #262b35;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.trashButton:hover,
+.minimizeButton:hover {
+  background: #313744;
+}
+
+.progressWrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.progressWrapper span {
+  color: white;
+
+  font-size: 14px;
+
+  text-align: right;
+}
+
+.progressBar {
+  width: 100%;
+
+  height: 12px;
+
+  background: #262b35;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+
+  background: linear-gradient(90deg, #5d8cff, #7aa2ff);
+
+  border-radius: inherit;
+
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.finished {
+  text-align: center;
+
+  color: #6dff94;
+
+  font-weight: 600;
+}
+
+.minimizedBar {
+  position: fixed;
+
+  left: 50%;
+  bottom: 20px;
+
+  transform: translateX(-50%);
+
+  width: 320px;
+
+  background: rgba(26, 29, 36, 0.95);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+
+  padding: 14px 18px;
+
+  z-index: 999;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  animation: miniIn 0.25s ease;
+
+  width: fit-content;
+
+  transition: 0.25s ease;
+
+  transition: 0.25s ease;
+
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.miniProgress {
+  width: 220px;
+
+  min-width: 220px;
+
+  transition: 0.25s ease;
+
+  height: 10px;
+
+  background: #262b35;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.miniProgressFill {
+  height: 100%;
+
+  background: linear-gradient(90deg, #5d8cff, #7aa2ff);
+}
+
+.minimizedBar span {
+  color: white;
+
+  font-size: 14px;
+
+  min-width: 45px;
+}
+
+@keyframes miniIn {
+  from {
+    opacity: 0;
+
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.trashButton {
+  color: #ff7b7b;
+}
+
+.trashButton:hover {
+  background: rgba(255, 80, 80, 0.18);
+
+  color: #ff4d67;
+
+  transform: scale(1.08);
+}
+
+.minimizedBar:hover {
+  min-width: 320px;
+
+  transform: translateX(-50%) translateY(-2px);
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+  .trashIcon {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: scale(1);
+
+    right: -5px;
+  }
+}
+
+.miniContent {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding-right: 0;
+
+  transition: 0.25s ease;
+
+  width: 100%;
+}
+
+.trashIcon {
+  width: 0px;
+
+  position: absolute;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: rgba(255, 90, 90, 0.12);
+
+  color: #ff6b81;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: scale(0.8);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    right 0.25s ease;
+}
+
+.trashIcon:hover {
+  background: rgba(255, 90, 90, 0.2);
+
+  transform: scale(1.08);
+}
+
+.redownloadMini {
+  border: none;
+
+  height: 38px;
+
+  padding: 0 16px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #6b7cff, #4f8cff);
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  animation: trashIn 0.18s ease;
+
+  transition: 0.2s ease;
+}
+
+.redownloadMini:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 0 18px rgba(79, 140, 255, 0.3);
+}
+
+.cancelBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cancelBox span {
+  color: #ff9b9b;
+
+  font-size: 13px;
+}
+
+.progressInfo {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.progressInfo span {
+  color: white;
+
+  font-size: 14px;
+}

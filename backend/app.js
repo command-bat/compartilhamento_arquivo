@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 
@@ -10,7 +12,7 @@ const app = express();
 app.use(
     cors({
         origin: [
-            "http://localhost:5173"
+            process.env.FRONT_URL
         ],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true
@@ -24,5 +26,5 @@ app.use("/", fileRoutes);
 cleanup();
 
 app.listen(3000, () => {
-    console.log("Servidor rodando");
+    console.log("Servidor rodando\nPorta: 3000");
 });

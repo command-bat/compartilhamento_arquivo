@@ -4,18 +4,24 @@ const express = require("express");
 const cors = require("cors");
 
 const fileRoutes = require("./routes/files");
-
 const cleanup = require("./services/cleanup");
 
 const app = express();
 
+const PORTA = process.env.PORTA;
+
 app.use(
     cors({
-        origin: [
-            process.env.FRONT_URL
-        ],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true
+        origin: function (origin, callback) {
+            const allowed = [process.env.FRONT_URL];
+
+            if (!origin) return callback(null, true);
+            if (allowed.includes(origin)) return callback(null, true);
+
+            return callback(new Error("CORS blocked"));
+        },
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        credentials: true,
     })
 );
 
@@ -25,6 +31,6 @@ app.use("/", fileRoutes);
 
 cleanup();
 
-app.listen(3000, () => {
-    console.log("Servidor rodando\nPorta: 3000");
+app.listen(PORTA, () => {
+    console.log("Servidor rodando\nPorta: " + PORTA);
 });

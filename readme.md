@@ -22,13 +22,11 @@ Aplicação full-stack que permite upload, armazenamento e compartilhamento de a
 - Node.js
 - Multer
 - Express
-- API REST
 
 ## 📦 Funcionalidades
 
 - Upload de arquivos
 - Download via link
-- API para gerenciamento de arquivos
 - Interface simples e funcional
 ```
 
